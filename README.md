@@ -1,39 +1,124 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+# Gridify
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+A Flutter package to create a dynamic staggered grid layout with custom item heights, padding, scaling, and more. `Gridify` is designed to simplify creating visually appealing layouts for your Flutter applications.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+---
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Dynamic staggered grid layout.
+- Customizable item heights.
+- Padding, scaling, and color customization.
+- Easy-to-use builder pattern for generating items.
 
-## Getting started
+---
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Installation
+
+Add `gridify` to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  gridify: ^1.0.0
+```
+
+Then run:
+
+```sh
+flutter pub get
+```
+
+---
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Here's a simple example of using `Gridify`:
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:gridify/gridify.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Gridify(
+          itemCount: 10,
+          builder: (context, index) => Center(
+            child: Text(
+              "Item $index",
+              style: const TextStyle(fontSize: 18, color: Colors.white),
+            ),
+          ),
+          padding: const EdgeInsets.all(8),
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.blue,
+          scale: 0.8,
+          ontap: () {
+            debugPrint('Item tapped!');
+          },
+        ),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+---
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## API Reference
+
+### **`Gridify` Constructor**
+
+```dart
+Gridify({
+  required int itemCount,
+  required Widget Function(BuildContext, int) builder,
+  EdgeInsetsGeometry? padding,
+  double? scale,
+  Color? color,
+  BorderRadiusGeometry? borderRadius,
+  required VoidCallback ontap,
+})
+```
+
+#### **Parameters**
+
+- `itemCount`: The total number of items in the grid.
+- `builder`: A function to build each item.
+- `padding`: Optional padding around each grid item.
+- `scale`: Optional scaling factor for item heights.
+- `color`: Background color of grid items.
+- `borderRadius`: Border radius for each grid item.
+- `ontap`: Callback when an item is tapped.
+
+
+---
+
+## Contributing
+
+Feel free to contribute by submitting issues or pull requests on GitHub.
+
+## License
+
+This package is open-sourced under the MIT License.
