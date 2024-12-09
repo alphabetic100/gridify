@@ -62,7 +62,7 @@ class _GridifyState extends State<Gridify> {
             Expanded(
               child: Column(
                 children: List.generate(evenList.length, (index) {
-                  int actualIndex = evenList[index];
+                  final int actualIndex = evenList[index];
                   return Padding(
                     padding: widget.padding ?? const EdgeInsets.all(0),
                     child: ClipRRect(
@@ -84,7 +84,7 @@ class _GridifyState extends State<Gridify> {
             Expanded(
               child: Column(
                 children: List.generate(oddList.length, (index) {
-                  int actualIndex = oddList[index];
+                final  int actualIndex = oddList[index];
                   return Padding(
                     padding: widget.padding ?? const EdgeInsets.all(0),
                     child: ClipRRect(

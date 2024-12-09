@@ -13,6 +13,13 @@ A Flutter package to create a dynamic staggered grid layout with custom item hei
 - Easy-to-use builder pattern for generating items.
 
 ---
+## Demo
+
+To see `Gridify` in action, download and play the demo video:
+
+[demo](lib/example/image/demo.png)
+
+---
 
 ## Installation
 
