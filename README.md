@@ -1,4 +1,3 @@
-
 # Gridify
 
 A Flutter package to create a dynamic staggered grid layout with custom item heights, padding, scaling, and more. `Gridify` is designed to simplify creating visually appealing layouts for your Flutter applications.
@@ -15,9 +14,11 @@ A Flutter package to create a dynamic staggered grid layout with custom item hei
 ---
 ## Demo
 
-To see `Gridify` in action, download and play the demo video:
+To see `Gridify` in action, view the demo image below:
 
-[demo](lib/example/image/demo.png)
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="lib/example/image/demo.png" alt="Demo" style="width: 70%; height: auto; max-height: 300px; border-radius: 18px;">
+</div>
 
 ---
 

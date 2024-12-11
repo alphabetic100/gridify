@@ -1,7 +1,8 @@
 name: gridify
-description: "A new Flutter package project."
+description: A Flutter package that simplifies creating dynamic height grid views with flexible child widgets.
 version: 0.0.1
-homepage:
+homepage: https://pub.dev/packages/gridify
+repository: https://github.com/your_username/gridify
 
 environment:
   sdk: ^3.5.2
